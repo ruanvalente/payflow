@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:payflow/shared/themes/app_colors.dart';
 
-import 'package:payflow/screens/home.dart';
-import 'package:payflow/modules/splash_screen.dart';
+import 'package:payflow/modules/splash/splash_screen.dart';
 
 void main() {
   runApp(AppWidget());
