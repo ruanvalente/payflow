@@ -1,7 +1,11 @@
+// Core
 import 'package:flutter/material.dart';
+
+// Themes
 import 'package:payflow/shared/themes/app_colors.dart';
 import 'package:payflow/shared/themes/app_images.dart';
 import 'package:payflow/shared/themes/app_text_style.dart';
+import 'package:payflow/shared/widgets/social_login_button/social_button.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -31,10 +35,10 @@ class _LoginScreenState extends State<LoginScreen> {
               top: 40,
               right: 0,
               left: 0,
-              child: Image.asset(AppImages.person, width: 208, height: 373),
+              child: Image.asset(AppImages.person, width: 208, height: 300),
             ),
             Positioned(
-              bottom: size.height * 0.15,
+              bottom: size.height * 0.01,
               left: 0,
               right: 0,
               child: Column(
@@ -42,11 +46,24 @@ class _LoginScreenState extends State<LoginScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Image.asset(AppImages.logomini),
-                  Text(
-                    'Organize seus\nboletos em um\nsó lugar',
-                    textAlign: TextAlign.center,
-                    style: TextStyles.titleHome,
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        top: 30, left: 70, right: 70, bottom: 40),
+                    child: Text(
+                      'Organize seus\nboletos em um\nsó lugar',
+                      textAlign: TextAlign.center,
+                      style: TextStyles.titleHome,
+                    ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.all(40),
+                    child: SocialLoginButton(
+                      onTap: () {
+                        print('oi');
+                      },
+                      title: 'Entre como Google',
+                    ),
+                  )
                 ],
               ),
             ),
