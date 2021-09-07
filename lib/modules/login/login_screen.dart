@@ -1,5 +1,6 @@
 // Core
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 // Themes
 import 'package:payflow/shared/themes/app_colors.dart';
@@ -58,8 +59,18 @@ class _LoginScreenState extends State<LoginScreen> {
                   Padding(
                     padding: const EdgeInsets.all(40),
                     child: SocialLoginButton(
-                      onTap: () {
-                        print('oi');
+                      onTap: () async {
+                        GoogleSignIn _googleSignIn = GoogleSignIn(
+                          scopes: [
+                            'email',
+                          ],
+                        );
+                        try {
+                          final response = await _googleSignIn.signIn();
+                          print(response);
+                        } catch (error) {
+                          print(error);
+                        }
                       },
                       title: 'Entre como Google',
                     ),
