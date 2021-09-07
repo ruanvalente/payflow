@@ -36,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
               top: 40,
               right: 0,
               left: 0,
-              child: Image.asset(AppImages.person, width: 208, height: 300),
+              child: Image.asset(AppImages.person, width: 208, height: 220),
             ),
             Positioned(
               bottom: size.height * 0.01,
@@ -49,7 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Image.asset(AppImages.logomini),
                   Padding(
                     padding: const EdgeInsets.only(
-                        top: 30, left: 70, right: 70, bottom: 40),
+                        top: 20, left: 40, right: 40, bottom: 20),
                     child: Text(
                       'Organize seus\nboletos em um\nsó lugar',
                       textAlign: TextAlign.center,
@@ -57,7 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(40),
+                    padding: const EdgeInsets.all(20),
                     child: SocialLoginButton(
                       onTap: () async {
                         GoogleSignIn _googleSignIn = GoogleSignIn(
