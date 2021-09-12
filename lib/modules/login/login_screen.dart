@@ -1,6 +1,6 @@
 // Core
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
+import 'package:payflow/modules/login/login_controller.dart';
 
 // Themes
 import 'package:payflow/shared/themes/app_colors.dart';
@@ -16,6 +16,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final loginController = LoginController();
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -36,7 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
               top: 40,
               right: 0,
               left: 0,
-              child: Image.asset(AppImages.person, width: 208, height: 220),
+              child: Image.asset(AppImages.person, width: 240, height: 300),
             ),
             Positioned(
               bottom: size.height * 0.01,
@@ -49,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Image.asset(AppImages.logomini),
                   Padding(
                     padding: const EdgeInsets.only(
-                        top: 20, left: 40, right: 40, bottom: 20),
+                        top: 30, left: 40, right: 40, bottom: 60),
                     child: Text(
                       'Organize seus\nboletos em um\nsó lugar',
                       textAlign: TextAlign.center,
@@ -59,18 +60,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   Padding(
                     padding: const EdgeInsets.all(20),
                     child: SocialLoginButton(
-                      onTap: () async {
-                        GoogleSignIn _googleSignIn = GoogleSignIn(
-                          scopes: [
-                            'email',
-                          ],
-                        );
-                        try {
-                          final response = await _googleSignIn.signIn();
-                          print(response);
-                        } catch (error) {
-                          print(error);
-                        }
+                      onTap: () {
+                        loginController.googleSignIn();
                       },
                       title: 'Entre como Google',
                     ),
