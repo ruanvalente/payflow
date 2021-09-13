@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'modules/login/login_screen.dart';
 import 'shared/themes/app_colors.dart';
+
+import 'modules/home/home_screen.dart';
+import 'modules/login/login_screen.dart';
+import 'modules/splash/splash_screen.dart';
 
 class AppWidget extends StatelessWidget {
   @override
@@ -13,6 +16,11 @@ class AppWidget extends StatelessWidget {
         primaryColor: AppColors.primary,
       ),
       home: LoginScreen(),
+      routes: {
+        "/splash": (context) => SplashScreen(),
+        "/home": (context) => HomeScreen(),
+        "/login": (context) => LoginScreen(),
+      },
     );
   }
 }

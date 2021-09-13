@@ -13,7 +13,7 @@ class AuthController {
       _user = user;
       _isAutheticated = true;
 
-      Navigator.push(
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(
           builder: (context) => HomeScreen(),
@@ -21,7 +21,7 @@ class AuthController {
       );
     } else {
       _isAutheticated = false;
-      Navigator.push(
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(
           builder: (context) => LoginScreen(),
