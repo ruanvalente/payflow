@@ -61,7 +61,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     padding: const EdgeInsets.all(20),
                     child: SocialLoginButton(
                       onTap: () {
-                        loginController.googleSignIn();
+                        print(context);
+                        loginController.googleSignIn(context);
                       },
                       title: 'Entre como Google',
                     ),
