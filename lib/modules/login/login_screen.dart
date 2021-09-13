@@ -37,10 +37,10 @@ class _LoginScreenState extends State<LoginScreen> {
               top: 40,
               right: 0,
               left: 0,
-              child: Image.asset(AppImages.person, width: 240, height: 300),
+              child: Image.asset(AppImages.person, width: 200, height: 220),
             ),
             Positioned(
-              bottom: size.height * 0.01,
+              bottom: size.height * 0.010,
               left: 0,
               right: 0,
               child: Column(
@@ -50,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Image.asset(AppImages.logomini),
                   Padding(
                     padding: const EdgeInsets.only(
-                        top: 30, left: 40, right: 40, bottom: 60),
+                        top: 10, left: 40, right: 40, bottom: 40),
                     child: Text(
                       'Organize seus\nboletos em um\nsó lugar',
                       textAlign: TextAlign.center,
