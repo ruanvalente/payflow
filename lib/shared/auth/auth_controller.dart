@@ -13,20 +13,10 @@ class AuthController {
       _user = user;
       _isAutheticated = true;
 
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => HomeScreen(),
-        ),
-      );
+      Navigator.pushReplacementNamed(context, '/home');
     } else {
       _isAutheticated = false;
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => LoginScreen(),
-        ),
-      );
+      Navigator.pushReplacementNamed(context, '/login');
     }
   }
 }
